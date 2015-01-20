@@ -1,0 +1,1154 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     47833,       1145]
+NotebookOptionsPosition[     46820,       1108]
+NotebookOutlinePosition[     47177,       1124]
+CellTagsIndexPosition[     47134,       1121]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FloatValue", "[", 
+   RowBox[{"Float", "[", 
+    RowBox[{"b_", ",", "d_", ",", "e_"}], "]"}], "]"}], ":=", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"n", "=", "1"}], 
+    RowBox[{"Length", "[", "d", "]"}]], 
+   RowBox[{
+    RowBox[{"d", "\[LeftDoubleBracket]", "n", "\[RightDoubleBracket]"}], 
+    SuperscriptBox["b", 
+     RowBox[{"-", 
+      RowBox[{"(", 
+       RowBox[{"n", "-", "1"}], ")"}]}]], " ", "\[Times]", " ", 
+    SuperscriptBox["b", "e"]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Attributes", "[", "FloatValue", "]"}], ":=", 
+  RowBox[{"{", "Listable", "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"N", "[", 
+    RowBox[{"f", ":", 
+     RowBox[{"Float", "[", "___", "]"}]}], "]"}], ":=", 
+   RowBox[{"FloatValue", "[", "f", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FormatFloat", "[", 
+    RowBox[{"Float", "[", 
+     RowBox[{"b_", ",", "d_", ",", "e_"}], "]"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"First", "[", "d", "]"}], ",", "\"\<.\>\""}], "}"}], ",", 
+      RowBox[{"Rest", "[", "d", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Spacer", "[", "4", "]"}], ",", "\"\<\[Times]\>\"", ",", 
+        RowBox[{"Spacer", "[", "4", "]"}], ",", 
+        RowBox[{"Superscript", "[", 
+         RowBox[{"b", ",", "e"}], "]"}]}], "}"}]}], "]"}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Format", "[", 
+    RowBox[{"f", ":", 
+     RowBox[{"Float", "[", "___", "]"}]}], "]"}], ":=", 
+   RowBox[{"Interpretation", "[", 
+    RowBox[{
+     RowBox[{"FormatFloat", "[", "f", "]"}], ",", "f"}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Float", "[", 
+  RowBox[{"2", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"-", "2"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FloatValue", "[", "%", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Float", "[", 
+  RowBox[{"2", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", "e"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FloatValue", "[", 
+  RowBox[{"%", "/.", 
+   RowBox[{"e", "\[Rule]", "0"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.627954703611886*^9, 3.62795479377246*^9}, {
+   3.627954824231497*^9, 3.627954854322895*^9}, {3.627954898914343*^9, 
+   3.627954937048482*^9}, {3.6279549674581337`*^9, 3.627954983503187*^9}, {
+   3.6279550680208263`*^9, 3.6279550703582973`*^9}, {3.6279552240659857`*^9, 
+   3.6279552421436243`*^9}, 3.627955328871269*^9, {3.627955360162018*^9, 
+   3.627955580397749*^9}, {3.627955622556712*^9, 3.627955649147979*^9}, {
+   3.62795572419446*^9, 3.627955779447826*^9}, {3.627955836341832*^9, 
+   3.627955911564107*^9}, {3.627956051810459*^9, 3.627956054907284*^9}, 
+   3.627956173629287*^9, {3.627956204147294*^9, 3.627956239153575*^9}, {
+   3.627956319639851*^9, 3.627956346890387*^9}, {3.6279563791837063`*^9, 
+   3.627956605312989*^9}, {3.627956709876704*^9, 3.627956711774087*^9}, {
+   3.627956801801877*^9, 3.627956927366715*^9}, {3.627957125866081*^9, 
+   3.627957176582678*^9}, {3.6279572193906927`*^9, 3.627957242341448*^9}, {
+   3.627957317475582*^9, 3.627957322819564*^9}, {3.6279584136269627`*^9, 
+   3.62795842155471*^9}, {3.6279584782759666`*^9, 3.6279585241598577`*^9}, {
+   3.627958913708675*^9, 3.627958942646159*^9}, {3.627959682550074*^9, 
+   3.627959719691436*^9}, {3.627959783101017*^9, 3.627959790759653*^9}, {
+   3.627961272088141*^9, 3.6279612892399483`*^9}, {3.6279617052904463`*^9, 
+   3.627961705418845*^9}, {3.627961862262828*^9, 3.627961865797344*^9}, {
+   3.627987932997209*^9, 3.6279879542466507`*^9}, {3.627987984367182*^9, 
+   3.6279880966639442`*^9}, {3.6279881409462633`*^9, 
+   3.6279881888580914`*^9}, {3.627988283787022*^9, 3.627988322258462*^9}, {
+   3.628019019171879*^9, 3.628019113877186*^9}, {3.628070742254403*^9, 
+   3.628070777110395*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TemplateBox[{"1","\".\"","0","1",InterpretationBox[
+     StyleBox[
+      GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+      "CacheGraphics" -> False], 
+     Spacer[4]],"\"\[Times]\"",InterpretationBox[
+     StyleBox[
+      GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+      "CacheGraphics" -> False], 
+     Spacer[4]],TemplateBox[{"2", 
+      RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+   "RowDefault"],
+  $CellContext`Float[2, {1, 0, 1}, -2]]], "Output",
+ CellChangeTimes->{{3.627958515031701*^9, 3.627958524544512*^9}, 
+   3.627958945910698*^9, {3.627959691321828*^9, 3.627959720927549*^9}, 
+   3.627959795651963*^9, 3.6279617059185534`*^9, {3.6279618546131163`*^9, 
+   3.62796186607915*^9}, {3.6279879382985477`*^9, 3.627987954717317*^9}, {
+   3.627987984821526*^9, 3.627988060998353*^9}, 3.62798809718678*^9, {
+   3.627988143865316*^9, 3.62798818941413*^9}, 3.627988322818379*^9, 
+   3.627989084711453*^9, {3.628019024369685*^9, 3.628019114115961*^9}, {
+   3.628070743265709*^9, 3.628070777456482*^9}, 3.630227756732594*^9}],
+
+Cell[BoxData[
+ FractionBox["5", "16"]], "Output",
+ CellChangeTimes->{{3.627958515031701*^9, 3.627958524544512*^9}, 
+   3.627958945910698*^9, {3.627959691321828*^9, 3.627959720927549*^9}, 
+   3.627959795651963*^9, 3.6279617059185534`*^9, {3.6279618546131163`*^9, 
+   3.62796186607915*^9}, {3.6279879382985477`*^9, 3.627987954717317*^9}, {
+   3.627987984821526*^9, 3.627988060998353*^9}, 3.62798809718678*^9, {
+   3.627988143865316*^9, 3.62798818941413*^9}, 3.627988322818379*^9, 
+   3.627989084711453*^9, {3.628019024369685*^9, 3.628019114115961*^9}, {
+   3.628070743265709*^9, 3.628070777456482*^9}, 3.6302277567367067`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TemplateBox[{RowBox[{"{", 
+      RowBox[{"0", ",", 
+        FractionBox["1", "4"], ",", 
+        FractionBox["1", "2"], ",", 
+        FractionBox["3", "4"], ",", "1"}], "}"}],"\".\"","y","z",
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+      "CacheGraphics" -> False], 
+     Spacer[4]],"\"\[Times]\"",InterpretationBox[
+     StyleBox[
+      GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+      "CacheGraphics" -> False], 
+     Spacer[4]],
+    TemplateBox[{"2", "e"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+   "RowDefault"],
+  $CellContext`Float[2, {{0, 
+     Rational[1, 4], 
+     Rational[1, 2], 
+     Rational[3, 4], 
+     1}, $CellContext`y, $CellContext`z}, $CellContext`e]]], "Output",
+ CellChangeTimes->{{3.627958515031701*^9, 3.627958524544512*^9}, 
+   3.627958945910698*^9, {3.627959691321828*^9, 3.627959720927549*^9}, 
+   3.627959795651963*^9, 3.6279617059185534`*^9, {3.6279618546131163`*^9, 
+   3.62796186607915*^9}, {3.6279879382985477`*^9, 3.627987954717317*^9}, {
+   3.627987984821526*^9, 3.627988060998353*^9}, 3.62798809718678*^9, {
+   3.627988143865316*^9, 3.62798818941413*^9}, 3.627988322818379*^9, 
+   3.627989084711453*^9, {3.628019024369685*^9, 3.628019114115961*^9}, {
+   3.628070743265709*^9, 3.628070777456482*^9}, 3.6302277567387943`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    FractionBox["y", "2"], "+", 
+    FractionBox["z", "4"]}], ",", 
+   RowBox[{
+    FractionBox["1", "4"], "+", 
+    FractionBox["y", "2"], "+", 
+    FractionBox["z", "4"]}], ",", 
+   RowBox[{
+    FractionBox["1", "2"], "+", 
+    FractionBox["y", "2"], "+", 
+    FractionBox["z", "4"]}], ",", 
+   RowBox[{
+    FractionBox["3", "4"], "+", 
+    FractionBox["y", "2"], "+", 
+    FractionBox["z", "4"]}], ",", 
+   RowBox[{"1", "+", 
+    FractionBox["y", "2"], "+", 
+    FractionBox["z", "4"]}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.627958515031701*^9, 3.627958524544512*^9}, 
+   3.627958945910698*^9, {3.627959691321828*^9, 3.627959720927549*^9}, 
+   3.627959795651963*^9, 3.6279617059185534`*^9, {3.6279618546131163`*^9, 
+   3.62796186607915*^9}, {3.6279879382985477`*^9, 3.627987954717317*^9}, {
+   3.627987984821526*^9, 3.627988060998353*^9}, 3.62798809718678*^9, {
+   3.627988143865316*^9, 3.62798818941413*^9}, 3.627988322818379*^9, 
+   3.627989084711453*^9, {3.628019024369685*^9, 3.628019114115961*^9}, {
+   3.628070743265709*^9, 3.628070777456482*^9}, 3.630227756741866*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"FloatsList", "[", 
+    RowBox[{"b_", ",", "p_", ",", "emin_", ",", "emax_"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Table", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Float", "[", 
+       RowBox[{"b", ",", "d", ",", "e"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"e", ",", "emin", ",", "emax"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"d", ",", 
+        RowBox[{"Tuples", "[", 
+         RowBox[{"Prepend", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"ConstantArray", "[", 
+            RowBox[{
+             RowBox[{"Range", "[", 
+              RowBox[{"0", ",", 
+               RowBox[{"b", "-", "1"}]}], "]"}], ",", 
+             RowBox[{"p", "-", "1"}]}], "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Range", "[", 
+            RowBox[{"1", ",", 
+             RowBox[{"b", "-", "1"}]}], "]"}]}], "]"}], "]"}]}], "}"}]}], 
+     "]"}], "//", "Flatten"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"FloatsDenormList", "[", 
+    RowBox[{"b_", ",", "p_", ",", "emin_"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Float", "[", 
+      RowBox[{"b", ",", 
+       RowBox[{"Prepend", "[", 
+        RowBox[{"d", ",", "0"}], "]"}], ",", "emin"}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"d", ",", 
+       RowBox[{"Tuples", "[", 
+        RowBox[{
+         RowBox[{"Range", "[", 
+          RowBox[{"0", ",", 
+           RowBox[{"b", "-", "1"}]}], "]"}], ",", 
+         RowBox[{"p", "-", "1"}]}], "]"}]}], "}"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"FloatsList", "[", 
+  RowBox[{"2", ",", "3", ",", 
+   RowBox[{"-", "1"}], ",", "2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{"FloatsList", "[", 
+   RowBox[{"2", ",", "3", ",", 
+    RowBox[{"-", "1"}], ",", "2"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"FloatsDenormList", "[", 
+   RowBox[{"2", ",", "3", ",", 
+    RowBox[{"-", "1"}]}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"FloatsList", "[", 
+  RowBox[{"3", ",", "2", ",", 
+   RowBox[{"-", "1"}], ",", "2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6279585576943417`*^9, 3.627958591831689*^9}, {
+   3.62795885441996*^9, 3.6279588809285173`*^9}, {3.627959004835843*^9, 
+   3.627959013081478*^9}, {3.6279596366912413`*^9, 3.627959675391266*^9}, {
+   3.627959890319613*^9, 3.627959961448515*^9}, {3.6279599944070597`*^9, 
+   3.6279599950327873`*^9}, {3.627961450122101*^9, 3.627961450942027*^9}, {
+   3.627961510993329*^9, 3.627961538279848*^9}, {3.62796158743943*^9, 
+   3.627961587509243*^9}, {3.6279616368301067`*^9, 3.627961642183981*^9}, {
+   3.627961720506707*^9, 3.627961721097774*^9}, {3.627987528827594*^9, 
+   3.627987539933053*^9}, {3.627987636839642*^9, 3.627987639102344*^9}, {
+   3.6279876920697317`*^9, 3.627987717589493*^9}, {3.627987752857542*^9, 
+   3.627987795647224*^9}, {3.6279879800872707`*^9, 3.627987980318729*^9}, {
+   3.627988067218869*^9, 3.6279880728581343`*^9}, {3.627988225506221*^9, 
+   3.6279882259767733`*^9}, 3.627989031463673*^9, {3.62798909493064*^9, 
+   3.627989095393235*^9}, {3.6279891576549807`*^9, 3.627989169677965*^9}, {
+   3.627989522622362*^9, 3.627989545545566*^9}, {3.627989726888865*^9, 
+   3.6279897327351437`*^9}, {3.627990013993235*^9, 3.627990087145454*^9}, {
+   3.6279902936927013`*^9, 3.627990296536821*^9}, {3.627990436324545*^9, 
+   3.627990457918408*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"2", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 0, 0}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"2", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 0, 1}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"2", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 1, 0}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"2", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 1, 1}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "0"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 0, 0}, 0]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "0"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 0, 1}, 0]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "0"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 1, 0}, 0]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "0"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 1, 1}, 0]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "1"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 0, 0}, 1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "1"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 0, 1}, 1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "1"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 1, 0}, 1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "1"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 1, 1}, 1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "2"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 0, 0}, 2]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "2"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 0, 1}, 2]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "2"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 1, 0}, 2]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"2", "2"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {1, 1, 1}, 2]]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.627990297396124*^9, {3.627990441495714*^9, 3.627990458721369*^9}, 
+   3.630227756845358*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.5`", ",", "0.625`", ",", "0.75`", ",", "0.875`", ",", "1.`", ",", 
+   "1.25`", ",", "1.5`", ",", "1.75`", ",", "2.`", ",", "2.5`", ",", "3.`", 
+   ",", "3.5`", ",", "4.`", ",", "5.`", ",", "6.`", ",", "7.`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.627990297396124*^9, {3.627990441495714*^9, 3.627990458721369*^9}, 
+   3.6302277568629417`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[
+    TemplateBox[{"0","\".\"","0","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"2", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {0, 0, 0}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"0","\".\"","0","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"2", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {0, 0, 1}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"0","\".\"","1","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"2", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {0, 1, 0}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"0","\".\"","1","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"2", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[2, {0, 1, 1}, -1]]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.627990297396124*^9, {3.627990441495714*^9, 3.627990458721369*^9}, 
+   3.630227756869714*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"3", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 0}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"3", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 1}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","2",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"3", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 2}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"3", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 0}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"3", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 1}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","2",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],TemplateBox[{"3", 
+        RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 2}, -1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "0"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 0}, 0]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "0"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 1}, 0]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","2",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "0"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 2}, 0]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "0"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 0}, 0]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "0"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 1}, 0]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","2",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "0"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 2}, 0]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "1"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 0}, 1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "1"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 1}, 1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","2",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "1"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 2}, 1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "1"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 0}, 1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "1"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 1}, 1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","2",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "1"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 2}, 1]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "2"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 0}, 2]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "2"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 1}, 2]], ",", 
+   InterpretationBox[
+    TemplateBox[{"1","\".\"","2",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "2"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {1, 2}, 2]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","0",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "2"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 0}, 2]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","1",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "2"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 1}, 2]], ",", 
+   InterpretationBox[
+    TemplateBox[{"2","\".\"","2",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],"\"\[Times]\"",InterpretationBox[
+       StyleBox[
+        GraphicsBox[{}, ImageSize -> {4, 0}, BaselinePosition -> Baseline], 
+        "CacheGraphics" -> False], 
+       Spacer[4]],
+      TemplateBox[{"3", "2"}, "Superscript", SyntaxForm -> SuperscriptBox]},
+     "RowDefault"],
+    $CellContext`Float[3, {2, 2}, 2]]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.627990297396124*^9, {3.627990441495714*^9, 3.627990458721369*^9}, 
+   3.630227756895216*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"FloatsPlot", "[", 
+    RowBox[{"b_", ",", "p_", ",", "emin_", ",", "emax_", ",", "opts___"}], 
+    "]"}], ":=", "\[IndentingNewLine]", 
+   RowBox[{"NumberLinePlot", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"N", "[", 
+       RowBox[{"FloatsList", "[", 
+        RowBox[{"b", ",", "p", ",", "emin", ",", "emax"}], "]"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"N", "[", 
+       RowBox[{"FloatsDenormList", "[", 
+        RowBox[{"b", ",", "p", ",", "emin"}], "]"}], "]"}]}], "}"}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"FloatsPlot", "[", 
+  RowBox[{"2", ",", "3", ",", 
+   RowBox[{"-", "1"}], ",", "2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FloatsPlot", "[", 
+  RowBox[{"3", ",", "2", ",", "0", ",", "1"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.627961468598504*^9, 3.6279615015231113`*^9}, {
+  3.627961545983*^9, 3.627961576630121*^9}, {3.627961949141094*^9, 
+  3.627961955458683*^9}, {3.627987578857682*^9, 3.627987628534362*^9}, {
+  3.6279877200620127`*^9, 3.627987722525523*^9}, {3.627989197158264*^9, 
+  3.627989207027678*^9}, {3.6279893248748293`*^9, 3.627989354278166*^9}, {
+  3.627989410532535*^9, 3.627989487326329*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[Medium], 
+    AbsoluteThickness[1.6], PointBox[{0.5, 1}], PointBox[{0.625, 1}], 
+    PointBox[{0.75, 1}], PointBox[{0.875, 1}], PointBox[{1., 1}], 
+    PointBox[{1.25, 1}], PointBox[{1.5, 1}], PointBox[{1.75, 1}], 
+    PointBox[{2., 1}], PointBox[{2.5, 1}], PointBox[{3., 1}], 
+    PointBox[{3.5, 1}], PointBox[{4., 1}], PointBox[{5., 1}], 
+    PointBox[{6., 1}], PointBox[{7., 1}]}, 
+   {RGBColor[0.880722, 0.611041, 0.142051], PointSize[Medium], 
+    AbsoluteThickness[1.6], PointBox[{0., 2}], PointBox[{0.125, 2}], 
+    PointBox[{0.25, 2}], PointBox[{0.375, 2}]}},
+  AspectRatio->NCache[Rational[1, 5]/GoldenRatio, 0.12360679774997896`],
+  Axes->{True, False},
+  AxesLabel->{None},
+  AxesOrigin->{Automatic, Automatic},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  ImagePadding->{{
+     Scaled[0.01], 
+     Scaled[0.01]}, {
+     Scaled[0.02], 
+     Scaled[0.01]}},
+  PlotRange->{{0., 7.}, {0, 2}},
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.627961577072682*^9, 3.6279616130703993`*^9, 3.627961716599895*^9, {
+   3.627961909091112*^9, 3.627961915544249*^9}, {3.627961952008986*^9, 
+   3.627961955809165*^9}, {3.627987551296838*^9, 3.627987629025546*^9}, 
+   3.627987722885991*^9, 3.627989129212861*^9, {3.627989190471521*^9, 
+   3.627989207470636*^9}, 3.627989287198143*^9, {3.62798933145161*^9, 
+   3.627989354624568*^9}, {3.6279894119094152`*^9, 3.627989487638884*^9}, 
+   3.627989742292398*^9, 3.627990474802061*^9, 3.628019131205111*^9, 
+   3.6302277569355783`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[Medium], 
+    AbsoluteThickness[1.6], PointBox[{1., 1}], 
+    PointBox[{1.3333333333333333`, 1}], PointBox[{1.6666666666666667`, 1}], 
+    PointBox[{2., 1}], PointBox[{2.3333333333333335`, 1}], 
+    PointBox[{2.6666666666666665`, 1}], PointBox[{3., 1}], PointBox[{4., 1}], 
+    PointBox[{5., 1}], PointBox[{6., 1}], PointBox[{7., 1}], 
+    PointBox[{8., 1}]}, 
+   {RGBColor[0.880722, 0.611041, 0.142051], PointSize[Medium], 
+    AbsoluteThickness[1.6], PointBox[{0., 2}], 
+    PointBox[{0.3333333333333333, 2}], PointBox[{0.6666666666666666, 2}]}},
+  AspectRatio->NCache[Rational[1, 5]/GoldenRatio, 0.12360679774997896`],
+  Axes->{True, False},
+  AxesLabel->{None},
+  AxesOrigin->{Automatic, Automatic},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  ImagePadding->{{
+     Scaled[0.01], 
+     Scaled[0.01]}, {
+     Scaled[0.02], 
+     Scaled[0.01]}},
+  PlotRange->{{0., 8.}, {0, 2}},
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.627961577072682*^9, 3.6279616130703993`*^9, 3.627961716599895*^9, {
+   3.627961909091112*^9, 3.627961915544249*^9}, {3.627961952008986*^9, 
+   3.627961955809165*^9}, {3.627987551296838*^9, 3.627987629025546*^9}, 
+   3.627987722885991*^9, 3.627989129212861*^9, {3.627989190471521*^9, 
+   3.627989207470636*^9}, 3.627989287198143*^9, {3.62798933145161*^9, 
+   3.627989354624568*^9}, {3.6279894119094152`*^9, 3.627989487638884*^9}, 
+   3.627989742292398*^9, 3.627990474802061*^9, 3.628019131205111*^9, 
+   3.630227756964573*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"FloatsPlot", "[", 
+  RowBox[{"2", ",", "4", ",", 
+   RowBox[{"-", "1"}], ",", "2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FloatsPlot", "[", 
+  RowBox[{"4", ",", "2", ",", 
+   RowBox[{"-", "1"}], ",", "2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.630227759887363*^9, 3.630227779058724*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[Medium], 
+    AbsoluteThickness[1.6], PointBox[{0.5, 1}], PointBox[{0.5625, 1}], 
+    PointBox[{0.625, 1}], PointBox[{0.6875, 1}], PointBox[{0.75, 1}], 
+    PointBox[{0.8125, 1}], PointBox[{0.875, 1}], PointBox[{0.9375, 1}], 
+    PointBox[{1., 1}], PointBox[{1.125, 1}], PointBox[{1.25, 1}], 
+    PointBox[{1.375, 1}], PointBox[{1.5, 1}], PointBox[{1.625, 1}], 
+    PointBox[{1.75, 1}], PointBox[{1.875, 1}], PointBox[{2., 1}], 
+    PointBox[{2.25, 1}], PointBox[{2.5, 1}], PointBox[{2.75, 1}], 
+    PointBox[{3., 1}], PointBox[{3.25, 1}], PointBox[{3.5, 1}], 
+    PointBox[{3.75, 1}], PointBox[{4., 1}], PointBox[{4.5, 1}], 
+    PointBox[{5., 1}], PointBox[{5.5, 1}], PointBox[{6., 1}], 
+    PointBox[{6.5, 1}], PointBox[{7., 1}], PointBox[{7.5, 1}]}, 
+   {RGBColor[0.880722, 0.611041, 0.142051], PointSize[Medium], 
+    AbsoluteThickness[1.6], PointBox[{0., 2}], PointBox[{0.0625, 2}], 
+    PointBox[{0.125, 2}], PointBox[{0.1875, 2}], PointBox[{0.25, 2}], 
+    PointBox[{0.3125, 2}], PointBox[{0.375, 2}], PointBox[{0.4375, 2}]}},
+  AspectRatio->NCache[Rational[1, 5]/GoldenRatio, 0.12360679774997896`],
+  Axes->{True, False},
+  AxesLabel->{None},
+  AxesOrigin->{Automatic, Automatic},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  ImagePadding->{{
+     Scaled[0.01], 
+     Scaled[0.01]}, {
+     Scaled[0.02], 
+     Scaled[0.01]}},
+  ImageSize->{646.57421875, Automatic},
+  PlotRange->{{0., 7.5}, {0, 2}},
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.63022775700014*^9, 3.63022777943675*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[Medium], 
+    AbsoluteThickness[1.6], PointBox[{0.25, 1}], PointBox[{0.3125, 1}], 
+    PointBox[{0.375, 1}], PointBox[{0.4375, 1}], PointBox[{0.5, 1}], 
+    PointBox[{0.5625, 1}], PointBox[{0.625, 1}], PointBox[{0.6875, 1}], 
+    PointBox[{0.75, 1}], PointBox[{0.8125, 1}], PointBox[{0.875, 1}], 
+    PointBox[{0.9375, 1}], PointBox[{1., 1}], PointBox[{1.25, 1}], 
+    PointBox[{1.5, 1}], PointBox[{1.75, 1}], PointBox[{2., 1}], 
+    PointBox[{2.25, 1}], PointBox[{2.5, 1}], PointBox[{2.75, 1}], 
+    PointBox[{3., 1}], PointBox[{3.25, 1}], PointBox[{3.5, 1}], 
+    PointBox[{3.75, 1}], PointBox[{4., 1}], PointBox[{5., 1}], 
+    PointBox[{6., 1}], PointBox[{7., 1}], PointBox[{8., 1}], 
+    PointBox[{9., 1}], PointBox[{10., 1}], PointBox[{11., 1}], 
+    PointBox[{12., 1}], PointBox[{13., 1}], PointBox[{14., 1}], 
+    PointBox[{15., 1}], PointBox[{16., 1}], PointBox[{20., 1}], 
+    PointBox[{24., 1}], PointBox[{28., 1}], PointBox[{32., 1}], 
+    PointBox[{36., 1}], PointBox[{40., 1}], PointBox[{44., 1}], 
+    PointBox[{48., 1}], PointBox[{52., 1}], PointBox[{56., 1}], 
+    PointBox[{60., 1}]}, 
+   {RGBColor[0.880722, 0.611041, 0.142051], PointSize[Medium], 
+    AbsoluteThickness[1.6], PointBox[{0., 2}], PointBox[{0.0625, 2}], 
+    PointBox[{0.125, 2}], PointBox[{0.1875, 2}]}},
+  AspectRatio->NCache[Rational[1, 5]/GoldenRatio, 0.12360679774997896`],
+  Axes->{True, False},
+  AxesLabel->{None},
+  AxesOrigin->{Automatic, Automatic},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  ImagePadding->{{
+     Scaled[0.01], 
+     Scaled[0.01]}, {
+     Scaled[0.02], 
+     Scaled[0.01]}},
+  ImageSize->{646.57421875, Automatic},
+  PlotRange->{{0., 60.}, {0, 2}},
+  PlotRangePadding->{{
+     Scaled[0.1], 
+     Scaled[0.1]}, {
+     Scaled[0.1], 
+     Scaled[0.1]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.63022775700014*^9, 3.630227779469524*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 856},
+WindowMargins->{{Automatic, 311}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4099, 92, 283, "Input"],
+Cell[4682, 116, 1137, 21, 32, "Output"],
+Cell[5822, 139, 624, 9, 47, "Output"],
+Cell[6449, 150, 1400, 30, 47, "Output"],
+Cell[7852, 182, 1135, 28, 47, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9024, 215, 3650, 83, 318, "Input"],
+Cell[12677, 300, 9106, 213, 57, "Output"],
+Cell[21786, 515, 394, 9, 28, "Output"],
+Cell[22183, 526, 2458, 57, 35, "Output"],
+Cell[24644, 585, 13406, 317, 77, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38087, 907, 1264, 27, 131, "Input"],
+Cell[39354, 936, 1703, 37, 79, "Output"],
+Cell[41060, 975, 1682, 37, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42779, 1017, 319, 7, 46, "Input"],
+Cell[43101, 1026, 1722, 36, 114, "Output"],
+Cell[44826, 1064, 1978, 41, 114, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

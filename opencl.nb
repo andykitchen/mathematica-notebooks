@@ -1,0 +1,343 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17568,        333]
+NotebookOptionsPosition[     17206,        315]
+NotebookOutlinePosition[     17563,        331]
+CellTagsIndexPosition[     17520,        328]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<OpenCLLink`\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"OpenCLInformation", "[", "1", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\<\"Version\"\>", 
+    "\[Rule]", "\<\"OpenCL 1.2 (Jul 29 2014 21:24:39)\"\>"}], ",", 
+   RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"Apple\"\>"}], ",", 
+   RowBox[{"\<\"Vendor\"\>", "\[Rule]", "\<\"Apple\"\>"}], ",", 
+   RowBox[{"\<\"Extensions\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"cl_APPLE_SetMemObjectDestructor\"\>", 
+      ",", "\<\"cl_APPLE_ContextLoggingFunctions\"\>", 
+      ",", "\<\"cl_APPLE_clut\"\>", 
+      ",", "\<\"cl_APPLE_query_kernel_names\"\>", 
+      ",", "\<\"cl_APPLE_gl_sharing\"\>", ",", "\<\"cl_khr_gl_event\"\>"}], 
+     "}"}]}], ",", 
+   RowBox[{"1", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"CPU\"\>"}], ",", 
+      RowBox[{"\<\"Name\"\>", 
+       "\[Rule]", "\<\"Intel(R) Core(TM) i7-3820QM CPU @ 2.70GHz\"\>"}], ",", 
+      
+      RowBox[{"\<\"Version\"\>", "\[Rule]", "\<\"OpenCL 1.2\"\>"}], ",", 
+      RowBox[{"\<\"Extensions\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"cl_APPLE_SetMemObjectDestructor\"\>", 
+         ",", "\<\"cl_APPLE_ContextLoggingFunctions\"\>", 
+         ",", "\<\"cl_APPLE_clut\"\>", 
+         ",", "\<\"cl_APPLE_query_kernel_names\"\>", 
+         ",", "\<\"cl_APPLE_gl_sharing\"\>", ",", "\<\"cl_khr_gl_event\"\>", 
+         ",", "\<\"cl_khr_fp64\"\>", 
+         ",", "\<\"cl_khr_global_int32_base_atomics\"\>", 
+         ",", "\<\"cl_khr_global_int32_extended_atomics\"\>", 
+         ",", "\<\"cl_khr_local_int32_base_atomics\"\>", 
+         ",", "\<\"cl_khr_local_int32_extended_atomics\"\>", 
+         ",", "\<\"cl_khr_byte_addressable_store\"\>", 
+         ",", "\<\"cl_khr_int64_base_atomics\"\>", 
+         ",", "\<\"cl_khr_int64_extended_atomics\"\>", 
+         ",", "\<\"cl_khr_3d_image_writes\"\>", 
+         ",", "\<\"cl_khr_image2d_from_buffer\"\>", 
+         ",", "\<\"cl_APPLE_fp64_basic_ops\"\>", 
+         ",", "\<\"cl_APPLE_fixed_alpha_channel_orders\"\>", 
+         ",", "\<\"cl_APPLE_biased_fixed_point_image_formats\"\>", 
+         ",", "\<\"cl_APPLE_command_queue_priority\"\>"}], "}"}]}], ",", 
+      RowBox[{"\<\"Driver Version\"\>", "\[Rule]", "\<\"1.1\"\>"}], ",", 
+      RowBox[{"\<\"Vendor\"\>", "\[Rule]", "\<\"Intel\"\>"}], ",", 
+      RowBox[{"\<\"Profile\"\>", "\[Rule]", "\<\"FULL_PROFILE\"\>"}], ",", 
+      RowBox[{"\<\"Vendor ID\"\>", "\[Rule]", "4294967295"}], ",", 
+      RowBox[{"\<\"Compute Units\"\>", "\[Rule]", "8"}], ",", 
+      RowBox[{"\<\"Core Count\"\>", "\[Rule]", "8"}], ",", 
+      RowBox[{"\<\"Maximum Work Item Dimensions\"\>", "\[Rule]", "3"}], ",", 
+      RowBox[{"\<\"Maximum Work Item Sizes\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"1024", ",", "1", ",", "1"}], "}"}]}], ",", 
+      RowBox[{"\<\"Maximum Work Group Size\"\>", "\[Rule]", "1024"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Character\"\>", "\[Rule]", "16"}], 
+      ",", 
+      RowBox[{"\<\"Preferred Vector Width Short\"\>", "\[Rule]", "8"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Integer\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Long\"\>", "\[Rule]", "2"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Float\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Double\"\>", "\[Rule]", "2"}], ",", 
+      
+      RowBox[{"\<\"Maximum Clock Frequency\"\>", "\[Rule]", "2700"}], ",", 
+      RowBox[{"\<\"Address Bits\"\>", "\[Rule]", "64"}], ",", 
+      RowBox[{"\<\"Maximum Memory Allocation Size\"\>", "\[Rule]", 
+       "4294967296"}], ",", 
+      RowBox[{"\<\"Image Support\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Maximum Read Image Arguments\"\>", "\[Rule]", "128"}], ",", 
+      RowBox[{"\<\"Maximum Write Image Arguments\"\>", "\[Rule]", "8"}], ",", 
+      
+      RowBox[{"\<\"Maximum Image2D Width\"\>", "\[Rule]", "8192"}], ",", 
+      RowBox[{"\<\"Maximum Image2D Height\"\>", "\[Rule]", "8192"}], ",", 
+      RowBox[{"\<\"Maximum Image3D Width\"\>", "\[Rule]", "2048"}], ",", 
+      RowBox[{"\<\"Maximum Image3D Height\"\>", "\[Rule]", "2048"}], ",", 
+      RowBox[{"\<\"Maximum Image3D Depth\"\>", "\[Rule]", "2048"}], ",", 
+      RowBox[{"\<\"Maximum Samplers\"\>", "\[Rule]", "16"}], ",", 
+      RowBox[{"\<\"Maximum Parameter Size\"\>", "\[Rule]", "4096"}], ",", 
+      RowBox[{"\<\"Memory Base Address Align\"\>", "\[Rule]", "1024"}], ",", 
+      RowBox[{"\<\"Memory Data Type Align Size\"\>", "\[Rule]", "128"}], ",", 
+      
+      RowBox[{"\<\"Floating Point Precision Configuration\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"Denorms\"\>", ",", "\<\"Infinity\"\>", 
+         ",", "\<\"NaNs\"\>", ",", "\<\"Round to Nearest\"\>", 
+         ",", "\<\"Round to Infinity\"\>", ",", "\<\"Round to Zero\"\>", 
+         ",", "\<\"IEEE754-2008 Fused MAD\"\>"}], "}"}]}], ",", 
+      RowBox[{"\<\"Global Memory Cache Type\"\>", 
+       "\[Rule]", "\<\"Read Write\"\>"}], ",", 
+      RowBox[{"\<\"Global Memory Cache Line Size\"\>", "\[Rule]", "8388608"}],
+       ",", 
+      RowBox[{"\<\"Global Memory Cache Size\"\>", "\[Rule]", "64"}], ",", 
+      RowBox[{"\<\"Global Memory Size\"\>", "\[Rule]", "17179869184"}], ",", 
+      RowBox[{"\<\"Maximum Constant Buffer Size\"\>", "\[Rule]", "65536"}], 
+      ",", 
+      RowBox[{"\<\"Maximum Constant Arguments\"\>", "\[Rule]", "8"}], ",", 
+      RowBox[{"\<\"Local Memory Type\"\>", "\[Rule]", "\<\"Global\"\>"}], ",", 
+      RowBox[{"\<\"Local Memory Size\"\>", "\[Rule]", "32768"}], ",", 
+      RowBox[{"\<\"Error Correction Support\"\>", "\[Rule]", "False"}], ",", 
+      RowBox[{"\<\"Profiling Timer Resolution\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"Endian Little\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Available\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Compiler Available\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Execution Capabilities\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"Kernel Execution\"\>", 
+         ",", "\<\"Native Kernel Execution\"\>"}], "}"}]}], ",", 
+      RowBox[{"\<\"Command Queue Properties\"\>", "\[Rule]", 
+       RowBox[{"{", "\<\"Profiling Enabled\"\>", "}"}]}]}], "}"}]}], ",", 
+   RowBox[{"2", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"GPU\"\>"}], ",", 
+      RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"HD Graphics 4000\"\>"}], ",", 
+      RowBox[{"\<\"Version\"\>", "\[Rule]", "\<\"OpenCL 1.2\"\>"}], ",", 
+      RowBox[{"\<\"Extensions\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"cl_APPLE_SetMemObjectDestructor\"\>", 
+         ",", "\<\"cl_APPLE_ContextLoggingFunctions\"\>", 
+         ",", "\<\"cl_APPLE_clut\"\>", 
+         ",", "\<\"cl_APPLE_query_kernel_names\"\>", 
+         ",", "\<\"cl_APPLE_gl_sharing\"\>", ",", "\<\"cl_khr_gl_event\"\>", 
+         ",", "\<\"cl_khr_global_int32_base_atomics\"\>", 
+         ",", "\<\"cl_khr_global_int32_extended_atomics\"\>", 
+         ",", "\<\"cl_khr_local_int32_base_atomics\"\>", 
+         ",", "\<\"cl_khr_local_int32_extended_atomics\"\>", 
+         ",", "\<\"cl_khr_byte_addressable_store\"\>", 
+         ",", "\<\"cl_khr_image2d_from_buffer\"\>", 
+         ",", "\<\"cl_khr_gl_depth_images\"\>", 
+         ",", "\<\"cl_khr_depth_images\"\>"}], "}"}]}], ",", 
+      RowBox[{"\<\"Driver Version\"\>", 
+       "\[Rule]", "\<\"1.2(Aug 17 2014 20:29:07)\"\>"}], ",", 
+      RowBox[{"\<\"Vendor\"\>", "\[Rule]", "\<\"Intel\"\>"}], ",", 
+      RowBox[{"\<\"Profile\"\>", "\[Rule]", "\<\"FULL_PROFILE\"\>"}], ",", 
+      RowBox[{"\<\"Vendor ID\"\>", "\[Rule]", "16925696"}], ",", 
+      RowBox[{"\<\"Compute Units\"\>", "\[Rule]", "16"}], ",", 
+      RowBox[{"\<\"Core Count\"\>", "\[Rule]", "16"}], ",", 
+      RowBox[{"\<\"Maximum Work Item Dimensions\"\>", "\[Rule]", "3"}], ",", 
+      RowBox[{"\<\"Maximum Work Item Sizes\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"512", ",", "512", ",", "512"}], "}"}]}], ",", 
+      RowBox[{"\<\"Maximum Work Group Size\"\>", "\[Rule]", "512"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Character\"\>", "\[Rule]", "1"}], 
+      ",", 
+      RowBox[{"\<\"Preferred Vector Width Short\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Integer\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Long\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Float\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Double\"\>", "\[Rule]", "0"}], ",", 
+      
+      RowBox[{"\<\"Maximum Clock Frequency\"\>", "\[Rule]", "1200"}], ",", 
+      RowBox[{"\<\"Address Bits\"\>", "\[Rule]", "64"}], ",", 
+      RowBox[{"\<\"Maximum Memory Allocation Size\"\>", "\[Rule]", 
+       "268435456"}], ",", 
+      RowBox[{"\<\"Image Support\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Maximum Read Image Arguments\"\>", "\[Rule]", "128"}], ",", 
+      RowBox[{"\<\"Maximum Write Image Arguments\"\>", "\[Rule]", "8"}], ",", 
+      
+      RowBox[{"\<\"Maximum Image2D Width\"\>", "\[Rule]", "16384"}], ",", 
+      RowBox[{"\<\"Maximum Image2D Height\"\>", "\[Rule]", "16384"}], ",", 
+      RowBox[{"\<\"Maximum Image3D Width\"\>", "\[Rule]", "2048"}], ",", 
+      RowBox[{"\<\"Maximum Image3D Height\"\>", "\[Rule]", "2048"}], ",", 
+      RowBox[{"\<\"Maximum Image3D Depth\"\>", "\[Rule]", "2048"}], ",", 
+      RowBox[{"\<\"Maximum Samplers\"\>", "\[Rule]", "16"}], ",", 
+      RowBox[{"\<\"Maximum Parameter Size\"\>", "\[Rule]", "1024"}], ",", 
+      RowBox[{"\<\"Memory Base Address Align\"\>", "\[Rule]", "1024"}], ",", 
+      RowBox[{"\<\"Memory Data Type Align Size\"\>", "\[Rule]", "128"}], ",", 
+      
+      RowBox[{"\<\"Floating Point Precision Configuration\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"Infinity\"\>", ",", "\<\"NaNs\"\>", 
+         ",", "\<\"Round to Nearest\"\>", ",", "\<\"Round to Infinity\"\>", 
+         ",", "\<\"Round to Zero\"\>"}], "}"}]}], ",", 
+      RowBox[{"\<\"Global Memory Cache Type\"\>", "\[Rule]", "\<\"None\"\>"}],
+       ",", 
+      RowBox[{"\<\"Global Memory Cache Line Size\"\>", "\[Rule]", "0"}], ",", 
+      
+      RowBox[{"\<\"Global Memory Cache Size\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"Global Memory Size\"\>", "\[Rule]", "1073741824"}], ",", 
+      RowBox[{"\<\"Maximum Constant Buffer Size\"\>", "\[Rule]", "65536"}], 
+      ",", 
+      RowBox[{"\<\"Maximum Constant Arguments\"\>", "\[Rule]", "8"}], ",", 
+      RowBox[{"\<\"Local Memory Type\"\>", "\[Rule]", "\<\"Local\"\>"}], ",", 
+      
+      RowBox[{"\<\"Local Memory Size\"\>", "\[Rule]", "65536"}], ",", 
+      RowBox[{"\<\"Error Correction Support\"\>", "\[Rule]", "False"}], ",", 
+      RowBox[{"\<\"Profiling Timer Resolution\"\>", "\[Rule]", "80"}], ",", 
+      RowBox[{"\<\"Endian Little\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Available\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Compiler Available\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Execution Capabilities\"\>", "\[Rule]", 
+       RowBox[{"{", "\<\"Kernel Execution\"\>", "}"}]}], ",", 
+      RowBox[{"\<\"Command Queue Properties\"\>", "\[Rule]", 
+       RowBox[{"{", "\<\"Profiling Enabled\"\>", "}"}]}]}], "}"}]}], ",", 
+   RowBox[{"3", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\<\"Type\"\>", "\[Rule]", "\<\"GPU\"\>"}], ",", 
+      RowBox[{"\<\"Name\"\>", "\[Rule]", "\<\"GeForce GT 650M\"\>"}], ",", 
+      RowBox[{"\<\"Version\"\>", "\[Rule]", "\<\"OpenCL 1.2\"\>"}], ",", 
+      RowBox[{"\<\"Extensions\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"cl_APPLE_SetMemObjectDestructor\"\>", 
+         ",", "\<\"cl_APPLE_ContextLoggingFunctions\"\>", 
+         ",", "\<\"cl_APPLE_clut\"\>", 
+         ",", "\<\"cl_APPLE_query_kernel_names\"\>", 
+         ",", "\<\"cl_APPLE_gl_sharing\"\>", ",", "\<\"cl_khr_gl_event\"\>", 
+         ",", "\<\"cl_khr_byte_addressable_store\"\>", 
+         ",", "\<\"cl_khr_global_int32_base_atomics\"\>", 
+         ",", "\<\"cl_khr_global_int32_extended_atomics\"\>", 
+         ",", "\<\"cl_khr_local_int32_base_atomics\"\>", 
+         ",", "\<\"cl_khr_local_int32_extended_atomics\"\>", 
+         ",", "\<\"cl_APPLE_fp64_basic_ops\"\>", ",", "\<\"cl_khr_fp64\"\>", 
+         ",", "\<\"cl_khr_3d_image_writes\"\>", 
+         ",", "\<\"cl_khr_depth_images\"\>", 
+         ",", "\<\"cl_khr_gl_depth_images\"\>", 
+         ",", "\<\"cl_khr_gl_msaa_sharing\"\>", 
+         ",", "\<\"cl_khr_image2d_from_buffer\"\>"}], "}"}]}], ",", 
+      RowBox[{"\<\"Driver Version\"\>", 
+       "\[Rule]", "\<\"8.26.28 310.40.55b01\"\>"}], ",", 
+      RowBox[{"\<\"Vendor\"\>", "\[Rule]", "\<\"NVIDIA\"\>"}], ",", 
+      RowBox[{"\<\"Profile\"\>", "\[Rule]", "\<\"FULL_PROFILE\"\>"}], ",", 
+      RowBox[{"\<\"Vendor ID\"\>", "\[Rule]", "16918272"}], ",", 
+      RowBox[{"\<\"Compute Units\"\>", "\[Rule]", "2"}], ",", 
+      RowBox[{"\<\"Core Count\"\>", "\[Rule]", "16"}], ",", 
+      RowBox[{"\<\"Maximum Work Item Dimensions\"\>", "\[Rule]", "3"}], ",", 
+      RowBox[{"\<\"Maximum Work Item Sizes\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"1024", ",", "1024", ",", "64"}], "}"}]}], ",", 
+      RowBox[{"\<\"Maximum Work Group Size\"\>", "\[Rule]", "1024"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Character\"\>", "\[Rule]", "1"}], 
+      ",", 
+      RowBox[{"\<\"Preferred Vector Width Short\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Integer\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Long\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Float\"\>", "\[Rule]", "1"}], ",", 
+      RowBox[{"\<\"Preferred Vector Width Double\"\>", "\[Rule]", "1"}], ",", 
+      
+      RowBox[{"\<\"Maximum Clock Frequency\"\>", "\[Rule]", "900"}], ",", 
+      RowBox[{"\<\"Address Bits\"\>", "\[Rule]", "32"}], ",", 
+      RowBox[{"\<\"Maximum Memory Allocation Size\"\>", "\[Rule]", 
+       "268435456"}], ",", 
+      RowBox[{"\<\"Image Support\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Maximum Read Image Arguments\"\>", "\[Rule]", "256"}], ",", 
+      RowBox[{"\<\"Maximum Write Image Arguments\"\>", "\[Rule]", "16"}], ",", 
+      RowBox[{"\<\"Maximum Image2D Width\"\>", "\[Rule]", "16384"}], ",", 
+      RowBox[{"\<\"Maximum Image2D Height\"\>", "\[Rule]", "16384"}], ",", 
+      RowBox[{"\<\"Maximum Image3D Width\"\>", "\[Rule]", "2048"}], ",", 
+      RowBox[{"\<\"Maximum Image3D Height\"\>", "\[Rule]", "2048"}], ",", 
+      RowBox[{"\<\"Maximum Image3D Depth\"\>", "\[Rule]", "2048"}], ",", 
+      RowBox[{"\<\"Maximum Samplers\"\>", "\[Rule]", "32"}], ",", 
+      RowBox[{"\<\"Maximum Parameter Size\"\>", "\[Rule]", "4352"}], ",", 
+      RowBox[{"\<\"Memory Base Address Align\"\>", "\[Rule]", "1024"}], ",", 
+      RowBox[{"\<\"Memory Data Type Align Size\"\>", "\[Rule]", "128"}], ",", 
+      
+      RowBox[{"\<\"Floating Point Precision Configuration\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\<\"Denorms\"\>", ",", "\<\"Infinity\"\>", 
+         ",", "\<\"NaNs\"\>", ",", "\<\"Round to Nearest\"\>", 
+         ",", "\<\"Round to Infinity\"\>", ",", "\<\"Round to Zero\"\>"}], 
+        "}"}]}], ",", 
+      RowBox[{"\<\"Global Memory Cache Type\"\>", "\[Rule]", "\<\"None\"\>"}],
+       ",", 
+      RowBox[{"\<\"Global Memory Cache Line Size\"\>", "\[Rule]", "0"}], ",", 
+      
+      RowBox[{"\<\"Global Memory Cache Size\"\>", "\[Rule]", "0"}], ",", 
+      RowBox[{"\<\"Global Memory Size\"\>", "\[Rule]", "1073741824"}], ",", 
+      RowBox[{"\<\"Maximum Constant Buffer Size\"\>", "\[Rule]", "65536"}], 
+      ",", 
+      RowBox[{"\<\"Maximum Constant Arguments\"\>", "\[Rule]", "9"}], ",", 
+      RowBox[{"\<\"Local Memory Type\"\>", "\[Rule]", "\<\"Local\"\>"}], ",", 
+      
+      RowBox[{"\<\"Local Memory Size\"\>", "\[Rule]", "49152"}], ",", 
+      RowBox[{"\<\"Error Correction Support\"\>", "\[Rule]", "False"}], ",", 
+      RowBox[{"\<\"Profiling Timer Resolution\"\>", "\[Rule]", "1000"}], ",", 
+      
+      RowBox[{"\<\"Endian Little\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Available\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Compiler Available\"\>", "\[Rule]", "True"}], ",", 
+      RowBox[{"\<\"Execution Capabilities\"\>", "\[Rule]", 
+       RowBox[{"{", "\<\"Kernel Execution\"\>", "}"}]}], ",", 
+      RowBox[{"\<\"Command Queue Properties\"\>", "\[Rule]", 
+       RowBox[{"{", "\<\"Profiling Enabled\"\>", "}"}]}]}], "}"}]}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.627810494259363*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 756},
+WindowMargins->{{36, Automatic}, {16, Automatic}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 76, 1, 28, "Input"],
+Cell[CellGroupData[{
+Cell[659, 25, 70, 1, 28, "Input"],
+Cell[732, 28, 16458, 284, 1593, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

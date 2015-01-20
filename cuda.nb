@@ -1,0 +1,331 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10813,        322]
+NotebookOptionsPosition[      9814,        283]
+NotebookOutlinePosition[     10169,        299]
+CellTagsIndexPosition[     10126,        296]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.62759719365029*^9, 3.627597206321137*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<CUDALink`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.625988958639791*^9, 3.625988958648202*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"CUDAResourcesInstall", "[", "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.6259889519422894`*^9, 3.625988951951344*^9}, {
+  3.627813094299633*^9, 3.627813100609201*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  InterpretationBox[
+   RowBox[{
+   "Paclet", "[", "\<\"CUDAResources\"\>", ",", "\<\"10.0.0.1\"\>", ",", "<>",
+     "]"}],
+   PacletManager`Paclet[
+   "Name" -> "CUDAResources", "Version" -> "10.0.0.1", "MathematicaVersion" -> 
+    "10.*", "Description" -> 
+    "{ToolkitVersion -> 6.0, MinimumDriver -> 270.0}", 
+    "SystemID" -> {"MacOSX-x86-64"}, "Qualifier" -> "OSX", 
+    "Extensions" -> {{
+      "Resource", 
+       "Resources" -> {
+        "CUDAToolkit", "ExampleData", "LibraryResources", "CUDALink", 
+         "OpenCLLink"}}}, "Location" -> 
+    "/Users/andy/Library/Mathematica/Paclets/Repository/CUDAResources-OSX-10.\
+0.0.1"]], "}"}]], "Output",
+ CellChangeTimes->{3.627595525907148*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"CUDAInformation", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Lookup", "[", 
+     RowBox[{"%", ",", "1"}], "]"}], "/.", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a_", "\[Rule]", "b_"}], ")"}], "\[RuleDelayed]", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}]}]}], ",", 
+   RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6275968450940943`*^9, 3.6275968479400682`*^9}, {
+  3.627596990317127*^9, 3.627597217816045*^9}, {3.62759731840164*^9, 
+  3.6275973192958117`*^9}, {3.627597489043984*^9, 3.627597509615147*^9}, {
+  3.6278131307713013`*^9, 3.627813149192576*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Name\"\>", "\<\"GeForce GT 650M\"\>"},
+    {"\<\"Clock Rate\"\>", "900000"},
+    {"\<\"Compute Capabilities\"\>", "3.`"},
+    {"\<\"GPU Overlap\"\>", "1"},
+    {"\<\"Maximum Block Dimensions\"\>", 
+     RowBox[{"{", 
+      RowBox[{"1024", ",", "1024", ",", "64"}], "}"}]},
+    {"\<\"Maximum Grid Dimensions\"\>", 
+     RowBox[{"{", 
+      RowBox[{"2147483647", ",", "65535", ",", "65535"}], "}"}]},
+    {"\<\"Maximum Threads Per Block\"\>", "1024"},
+    {"\<\"Maximum Shared Memory Per Block\"\>", "49152"},
+    {"\<\"Total Constant Memory\"\>", "65536"},
+    {"\<\"Warp Size\"\>", "32"},
+    {"\<\"Maximum Pitch\"\>", "2147483647"},
+    {"\<\"Maximum Registers Per Block\"\>", "65536"},
+    {"\<\"Texture Alignment\"\>", "512"},
+    {"\<\"Multiprocessor Count\"\>", "2"},
+    {"\<\"Core Count\"\>", "64"},
+    {"\<\"Execution Timeout\"\>", "1"},
+    {"\<\"Integrated\"\>", "False"},
+    {"\<\"Can Map Host Memory\"\>", "True"},
+    {"\<\"Compute Mode\"\>", "\<\"Default\"\>"},
+    {"\<\"Texture1D Width\"\>", "65536"},
+    {"\<\"Texture2D Width\"\>", "65536"},
+    {"\<\"Texture2D Height\"\>", "65536"},
+    {"\<\"Texture3D Width\"\>", "4096"},
+    {"\<\"Texture3D Height\"\>", "4096"},
+    {"\<\"Texture3D Depth\"\>", "4096"},
+    {"\<\"Texture2D Array Width\"\>", "16384"},
+    {"\<\"Texture2D Array Height\"\>", "16384"},
+    {"\<\"Texture2D Array Slices\"\>", "2048"},
+    {"\<\"Surface Alignment\"\>", "512"},
+    {"\<\"Concurrent Kernels\"\>", "True"},
+    {"\<\"ECC Enabled\"\>", "False"},
+    {"\<\"TCC Enabled\"\>", "False"},
+    {"\<\"Total Memory\"\>", "1073414144"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.627596830742466*^9, 3.627596848194365*^9}, {
+   3.6275969915812607`*^9, 3.627597001411784*^9}, {3.627597037329756*^9, 
+   3.627597076534645*^9}, {3.6275971081095552`*^9, 3.627597218089375*^9}, 
+   3.6275973195511827`*^9, {3.6275974970141783`*^9, 3.627597509961329*^9}, {
+   3.627813114249877*^9, 3.627813149532506*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"CUDAResourcesInformation", "[", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"First", "[", "%", "]"}], "/.", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a_", "\[Rule]", "b_"}], ")"}], "\[RuleDelayed]", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}]}]}], ",", 
+   RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.627813124721469*^9, 3.627813125511552*^9}, {
+  3.6278131572959347`*^9, 3.627813201246513*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Name\"\>", "\<\"CUDAResources\"\>"},
+    {"\<\"Version\"\>", "\<\"10.0.0.1\"\>"},
+    {"\<\"BuildNumber\"\>", "\<\"\"\>"},
+    {"\<\"Qualifier\"\>", "\<\"OSX\"\>"},
+    {"\<\"WolframVersion\"\>", "\<\"10.*\"\>"},
+    {"\<\"SystemID\"\>", 
+     RowBox[{"{", "\<\"MacOSX-x86-64\"\>", "}"}]},
+    {"\<\"Description\"\>", "\<\"{ToolkitVersion -> 6.0, MinimumDriver -> \
+270.0}\"\>"},
+    {"\<\"Category\"\>", "\<\"\"\>"},
+    {"\<\"Creator\"\>", "\<\"\"\>"},
+    {"\<\"Publisher\"\>", "\<\"\"\>"},
+    {"\<\"Support\"\>", "\<\"\"\>"},
+    {"\<\"Internal\"\>", "False"},
+    {"\<\"Location\"\>", \
+"\<\"/Users/andy/Library/Mathematica/Paclets/Repository/CUDAResources-OSX-10.\
+0.0.1\"\>"},
+    {"\<\"Context\"\>", 
+     RowBox[{"{", "}"}]},
+    {"\<\"Enabled\"\>", "True"},
+    {"\<\"Loading\"\>", "Manual"},
+    {"\<\"Hash\"\>", "\<\"f0e31a8c4e1abb77e2c18e28fc037b0f\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{
+  3.627813118630376*^9, {3.627813164368861*^9, 3.627813201528345*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FileNameJoin", "[", 
+  RowBox[{"{", 
+   RowBox[{"$CUDALinkPath", ",", "\"\<SupportFiles\>\""}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.627812047426296*^9, 3.6278120710267277`*^9}}],
+
+Cell[BoxData["\<\"/Users/andy/Library/Mathematica/Paclets/Repository/\
+CUDAResources-OSX-10.0.0.1/CUDALink/SupportFiles\"\>"], "Output",
+ CellChangeTimes->{3.627812071289979*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"n", "=", "2048"}], "\[IndentingNewLine]", 
+ RowBox[{"a", "=", 
+  RowBox[{"CUDAMemoryLoad", "[", 
+   RowBox[{
+    RowBox[{"RandomReal", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"{", 
+       RowBox[{"n", ",", " ", "n"}], "}"}]}], "]"}], ",", "\"\<Float\>\""}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"b", "=", 
+  RowBox[{"CUDAMemoryLoad", "[", 
+   RowBox[{
+    RowBox[{"RandomReal", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"{", 
+       RowBox[{"n", ",", " ", "n"}], "}"}]}], "]"}], ",", "\"\<Float\>\""}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"AbsoluteTiming", "[", 
+  RowBox[{"c", "=", 
+   RowBox[{"CUDADot", "[", 
+    RowBox[{"a", ",", "b"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CUDAMemoryUnload", "[", 
+   RowBox[{"a", ",", "b", ",", "c"}], "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{"1", ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", " ", "n"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{"1", ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", " ", "n"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"AbsoluteTiming", "[", 
+  RowBox[{
+   RowBox[{"Dot", "[", 
+    RowBox[{"a", ",", "b"}], "]"}], ";"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.627813214356928*^9, 3.627813274186605*^9}, {
+  3.627813306890327*^9, 3.6278135287302103`*^9}}],
+
+Cell[BoxData["2048"], "Output",
+ CellChangeTimes->{
+  3.6278132744495583`*^9, {3.627813308006263*^9, 3.6278133633586273`*^9}, {
+   3.627813414073783*^9, 3.6278135421972437`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CUDAMemory", "[", 
+  RowBox[{"\<\"<1347303125>\"\>", ",", "\<\"Float\"\>"}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.6278132744495583`*^9, {3.627813308006263*^9, 3.6278133633586273`*^9}, {
+   3.627813414073783*^9, 3.627813542245652*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CUDAMemory", "[", 
+  RowBox[{"\<\"<1056047907>\"\>", ",", "\<\"Float\"\>"}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.6278132744495583`*^9, {3.627813308006263*^9, 3.6278133633586273`*^9}, {
+   3.627813414073783*^9, 3.627813542305503*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.72337499999999999023003738329862244427`5.879963408651228", ",", 
+   RowBox[{"CUDAMemory", "[", 
+    RowBox[{"\<\"<44830494>\"\>", ",", "\<\"Double\"\>"}], "]"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.6278132744495583`*^9, {3.627813308006263*^9, 3.6278133633586273`*^9}, {
+   3.627813414073783*^9, 3.62781354302952*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.29335499999999997688959751940274145454`5.487993408095155", ",", "Null"}],
+   "}"}]], "Output",
+ CellChangeTimes->{
+  3.6278132744495583`*^9, {3.627813308006263*^9, 3.6278133633586273`*^9}, {
+   3.627813414073783*^9, 3.6278135434097157`*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 756},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 141, 2, 28, "Input"],
+Cell[702, 24, 140, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[867, 30, 210, 4, 28, "Input"],
+Cell[1080, 36, 730, 18, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1847, 59, 709, 17, 46, "Input"],
+Cell[2559, 78, 2134, 48, 573, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4730, 131, 545, 15, 46, "Input"],
+Cell[5278, 148, 1173, 30, 319, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6488, 183, 214, 5, 28, "Input"],
+Cell[6705, 190, 178, 2, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6920, 197, 1503, 45, 165, "Input"],
+Cell[8426, 244, 178, 3, 28, "Output"],
+Cell[8607, 249, 263, 5, 28, "Output"],
+Cell[8873, 256, 263, 5, 28, "Output"],
+Cell[9139, 263, 370, 8, 28, "Output"],
+Cell[9512, 273, 286, 7, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

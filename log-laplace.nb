@@ -1,0 +1,157 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5778,        148]
+NotebookOptionsPosition[      5390,        129]
+NotebookOutlinePosition[      5767,        146]
+CellTagsIndexPosition[      5724,        143]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"\[ScriptCapitalD]", "=", 
+  RowBox[{"TransformedDistribution", "[", 
+   RowBox[{
+    RowBox[{"Exp", "[", "x", "]"}], ",", 
+    RowBox[{"x", "\[Distributed]", 
+     RowBox[{"LaplaceDistribution", "[", 
+      RowBox[{"0", ",", "\[Beta]"}], "]"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p", "[", "\[Beta]_", "]"}], ":=", 
+  RowBox[{"Evaluate", "[", 
+   RowBox[{"PDF", "[", 
+    RowBox[{"\[ScriptCapitalD]", ",", "x"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"p", "[", "\[Beta]", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "5"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}]}], ",", 
+     RowBox[{"Filling", "\[Rule]", "Axis"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Beta]", ",", "2"}], "}"}], ",", "0", ",", "4"}], "}"}], ",", 
+   
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.61351905990744*^9, 3.613519137947175*^9}, {
+  3.613519171271607*^9, 3.613519443589505*^9}, {3.613519499458048*^9, 
+  3.6135195349631987`*^9}, {3.613520120816148*^9, 3.613520127238381*^9}, {
+  3.613520380316927*^9, 3.6135203826882677`*^9}, {3.613520557087326*^9, 
+  3.6135206265612717`*^9}, {3.613520691068928*^9, 3.613520707113781*^9}, {
+  3.613520779797167*^9, 3.613520783818412*^9}}],
+
+Cell[BoxData[
+ RowBox[{"TransformedDistribution", "[", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", "\[FormalX]"], ",", 
+   RowBox[{"\[FormalX]", "\[Distributed]", 
+    RowBox[{"LaplaceDistribution", "[", 
+     RowBox[{"0", ",", "\[Beta]"}], "]"}]}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.613519101370347*^9, 3.613519138230685*^9}, {
+   3.6135191718664494`*^9, 3.6135191779172173`*^9}, {3.613519226488525*^9, 
+   3.6135193790465117`*^9}, 3.613519413782301*^9, 3.613519443935028*^9, {
+   3.613519508289248*^9, 3.6135195354590893`*^9}, 3.613520127697076*^9, 
+   3.613520383148641*^9, {3.613520599011739*^9, 3.613520627058477*^9}, {
+   3.6135206923682003`*^9, 3.613520730953773*^9}, {3.613520777407147*^9, 
+   3.613520784208208*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`\[Beta]$$ = 2, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Beta]$$], 2}, 0, 4}}, Typeset`size$$ = {
+    360., {115., 120.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`\[Beta]$97778$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`\[Beta]$$ = 2}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`\[Beta]$$, $CellContext`\[Beta]$97778$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        $CellContext`p[$CellContext`\[Beta]$$], {$CellContext`x, 0, 5}, 
+        PlotRange -> {0, 1}, Filling -> Axis], 
+      "Specifications" :> {{{$CellContext`\[Beta]$$, 2}, 0, 4}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {159., 164.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`p[
+         Pattern[$CellContext`\[Beta], 
+          Blank[]]] := 
+       Piecewise[{{$CellContext`x^(-1 - $CellContext`\[Beta]^(-1))/(
+           2 $CellContext`\[Beta]), 
+           
+           And[$CellContext`x >= 0, Log[$CellContext`x] >= 
+            0]}, {$CellContext`x^(-1 + $CellContext`\[Beta]^(-1))/(
+           2 $CellContext`\[Beta]), 
+           And[$CellContext`x >= 0, Log[$CellContext`x] < 0]}}, 0]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.613519101370347*^9, 3.613519138230685*^9}, {
+   3.6135191718664494`*^9, 3.6135191779172173`*^9}, {3.613519226488525*^9, 
+   3.6135193790465117`*^9}, 3.613519413782301*^9, 3.613519443935028*^9, {
+   3.613519508289248*^9, 3.6135195354590893`*^9}, 3.613520127697076*^9, 
+   3.613520383148641*^9, {3.613520599011739*^9, 3.613520627058477*^9}, {
+   3.6135206923682003`*^9, 3.613520730953773*^9}, {3.613520777407147*^9, 
+   3.613520784249846*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 756},
+WindowMargins->{{12, Automatic}, {Automatic, 24}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1504, 37, 97, "Input"],
+Cell[2086, 61, 738, 13, 40, "Output"],
+Cell[2827, 76, 2547, 50, 340, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

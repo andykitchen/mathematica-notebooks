@@ -1,0 +1,293 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      9622,        284]
+NotebookOptionsPosition[      9250,        266]
+NotebookOutlinePosition[      9607,        282]
+CellTagsIndexPosition[      9564,        279]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"factorPolys", "[", 
+    RowBox[{"p_", ",", "q_", ",", "x_"}], "]"}], ":=", "\[IndentingNewLine]", 
+   
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"ts", ",", "fs"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"ts", "=", 
+       RowBox[{"Reverse", "[", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"a", " ", 
+           RowBox[{"x", "^", "k"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"k", ",", "0", ",", 
+            RowBox[{"q", "-", "1"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"a", ",", "0", ",", 
+            RowBox[{"p", "-", "1"}]}], "}"}]}], "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"fs", "=", 
+       RowBox[{
+        RowBox[{"x", "^", "q"}], " ", "+", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{"Apply", "[", 
+          RowBox[{"Outer", ",", 
+           RowBox[{"Prepend", "[", 
+            RowBox[{"ts", ",", "Plus"}], "]"}]}], "]"}], "]"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"f", ",", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"IrreduciblePolynomialQ", "[", 
+             RowBox[{"f", ",", 
+              RowBox[{"Modulus", "\[Rule]", "p"}]}], "]"}], ",", 
+            RowBox[{"{", "}"}], ",", 
+            RowBox[{"Factor", "[", 
+             RowBox[{"f", ",", 
+              RowBox[{"Modulus", "\[Rule]", "p"}]}], "]"}]}], "]"}]}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"f", ",", "fs"}], "}"}]}], "]"}]}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"factorPolys", "[", 
+    RowBox[{"2", ",", "3", ",", "x"}], "]"}], "//", "TableForm"}], "//", 
+  "TraditionalForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"factorPolys", "[", 
+    RowBox[{"3", ",", "2", ",", "y"}], "]"}], "//", "TableForm"}], "//", 
+  "TraditionalForm"}]}], "Input",
+ CellChangeTimes->{{3.620535271694634*^9, 3.620535273032811*^9}, {
+   3.620535336289432*^9, 3.6205353794421883`*^9}, {3.620535497933535*^9, 
+   3.6205355594745913`*^9}, 3.6205356133763733`*^9, {3.6205356745546913`*^9, 
+   3.62053573443908*^9}, {3.6205357833916407`*^9, 3.620535848046344*^9}, {
+   3.6205359956117973`*^9, 3.6205363107725973`*^9}, {3.6205363565091267`*^9, 
+   3.6205364492187653`*^9}, {3.620536480883944*^9, 3.6205364836895437`*^9}, {
+   3.6205365243143167`*^9, 3.620536527831793*^9}, {3.620536566659038*^9, 
+   3.620536599144562*^9}, {3.620536767998275*^9, 3.6205368691582727`*^9}, {
+   3.6205369310227118`*^9, 3.62053693250478*^9}, {3.620537047943252*^9, 
+   3.620537051894746*^9}, {3.620537118198288*^9, 3.62053713295177*^9}, {
+   3.6205371649826593`*^9, 3.620537165724052*^9}, {3.620594836789611*^9, 
+   3.620594838052785*^9}, {3.620594875082917*^9, 3.6205950592246943`*^9}, {
+   3.620595110652457*^9, 3.620595177051942*^9}, {3.620595214461138*^9, 
+   3.620595333809135*^9}, {3.620595396673304*^9, 3.6205954063196297`*^9}, {
+   3.6205954902243834`*^9, 3.620595523628954*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[GridBox[{
+     {
+      SuperscriptBox["x", "3"], 
+      SuperscriptBox["x", "3"]},
+     {
+      RowBox[{
+       SuperscriptBox["x", "3"], "+", "1"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"x", "+", "1"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", "x", "+", "1"}], ")"}]}]},
+     {
+      RowBox[{
+       SuperscriptBox["x", "3"], "+", "x"}], 
+      RowBox[{"x", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"x", "+", "1"}], ")"}], "2"]}]},
+     {
+      RowBox[{
+       SuperscriptBox["x", "3"], "+", "x", "+", "1"}], 
+      InterpretationBox["\<\"\"\>",
+       {}]},
+     {
+      RowBox[{
+       SuperscriptBox["x", "3"], "+", 
+       SuperscriptBox["x", "2"]}], 
+      RowBox[{
+       SuperscriptBox["x", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{"x", "+", "1"}], ")"}]}]},
+     {
+      RowBox[{
+       SuperscriptBox["x", "3"], "+", 
+       SuperscriptBox["x", "2"], "+", "1"}], 
+      InterpretationBox["\<\"\"\>",
+       {}]},
+     {
+      RowBox[{
+       SuperscriptBox["x", "3"], "+", 
+       SuperscriptBox["x", "2"], "+", "x"}], 
+      RowBox[{"x", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", "x", "+", "1"}], ")"}]}]},
+     {
+      RowBox[{
+       SuperscriptBox["x", "3"], "+", 
+       SuperscriptBox["x", "2"], "+", "x", "+", "1"}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"x", "+", "1"}], ")"}], "3"]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[2.0999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   TableForm[{{$CellContext`x^3, $CellContext`x^3}, {
+     1 + $CellContext`x^3, (1 + $CellContext`x) (
+       1 + $CellContext`x + $CellContext`x^2)}, {$CellContext`x + \
+$CellContext`x^3, $CellContext`x (1 + $CellContext`x)^2}, {
+     1 + $CellContext`x + $CellContext`x^3, {}}, {$CellContext`x^2 + \
+$CellContext`x^3, $CellContext`x^2 (1 + $CellContext`x)}, {
+     1 + $CellContext`x^2 + $CellContext`x^3, {}}, {$CellContext`x + \
+$CellContext`x^2 + $CellContext`x^3, $CellContext`x (
+       1 + $CellContext`x + $CellContext`x^2)}, {
+     1 + $CellContext`x + $CellContext`x^2 + $CellContext`x^3, (
+       1 + $CellContext`x)^3}}]], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.6205950489573708`*^9, {3.620595119205284*^9, 3.6205951778676567`*^9}, {
+   3.620595215651935*^9, 3.620595334364438*^9}, 3.620595408756228*^9, {
+   3.620595491366913*^9, 3.6205955115776377`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[GridBox[{
+     {
+      SuperscriptBox["y", "2"], 
+      SuperscriptBox["y", "2"]},
+     {
+      RowBox[{
+       SuperscriptBox["y", "2"], "+", "1"}], 
+      InterpretationBox["\<\"\"\>",
+       {}]},
+     {
+      RowBox[{
+       SuperscriptBox["y", "2"], "+", "2"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"y", "+", "1"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"y", "+", "2"}], ")"}]}]},
+     {
+      RowBox[{
+       SuperscriptBox["y", "2"], "+", "y"}], 
+      RowBox[{"y", " ", 
+       RowBox[{"(", 
+        RowBox[{"y", "+", "1"}], ")"}]}]},
+     {
+      RowBox[{
+       SuperscriptBox["y", "2"], "+", "y", "+", "1"}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"y", "+", "2"}], ")"}], "2"]},
+     {
+      RowBox[{
+       SuperscriptBox["y", "2"], "+", "y", "+", "2"}], 
+      InterpretationBox["\<\"\"\>",
+       {}]},
+     {
+      RowBox[{
+       SuperscriptBox["y", "2"], "+", 
+       RowBox[{"2", " ", "y"}]}], 
+      RowBox[{"y", " ", 
+       RowBox[{"(", 
+        RowBox[{"y", "+", "2"}], ")"}]}]},
+     {
+      RowBox[{
+       SuperscriptBox["y", "2"], "+", 
+       RowBox[{"2", " ", "y"}], "+", "1"}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"y", "+", "1"}], ")"}], "2"]},
+     {
+      RowBox[{
+       SuperscriptBox["y", "2"], "+", 
+       RowBox[{"2", " ", "y"}], "+", "2"}], 
+      InterpretationBox["\<\"\"\>",
+       {}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[2.0999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   TableForm[{{$CellContext`y^2, $CellContext`y^2}, {
+     1 + $CellContext`y^2, {}}, {
+     2 + $CellContext`y^2, (1 + $CellContext`y) (
+       2 + $CellContext`y)}, {$CellContext`y + $CellContext`y^2, \
+$CellContext`y (1 + $CellContext`y)}, {
+     1 + $CellContext`y + $CellContext`y^2, (2 + $CellContext`y)^2}, {
+     2 + $CellContext`y + $CellContext`y^2, {}}, {
+     2 $CellContext`y + $CellContext`y^2, $CellContext`y (
+       2 + $CellContext`y)}, {
+     1 + 2 $CellContext`y + $CellContext`y^2, (1 + $CellContext`y)^2}, {
+     2 + 2 $CellContext`y + $CellContext`y^2, {}}}]], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.6205950489573708`*^9, {3.620595119205284*^9, 3.6205951778676567`*^9}, {
+   3.620595215651935*^9, 3.620595334364438*^9}, 3.620595408756228*^9, {
+   3.620595491366913*^9, 3.62059551161312*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{415, Automatic}, {34, Automatic}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 3138, 74, 165, "Input"],
+Cell[3720, 98, 2815, 81, 187, "Output"],
+Cell[6538, 181, 2696, 82, 203, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
